@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
+:root {
+    --Esquinas: 1rem;
+    --AnchoMargen: 0.15rem;
+    --Espaciado: 1rem;
+    --EsquinaBoton: 0.3rem;
+    --Fuente: 'Mate SC', serif;
+    --radioBurbuja: 3rem;
+    --MargenBurbuja: 0.2rem;
+    
+    --colorHover: #8675A9;
+    --colorBotones: purple;
+    --colorCodigo: #bf80fa; 
+}
+
+*{
+    margin: 0;
+    /* padding: 0.3rem; */
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("morado.jpg");
+    background-size: 100%;
+    font-family: var(--Fuente);
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+/*header*/
+header{
+    margin: 0;
+    padding: 2rem;
+}
+
+.tope{
+    width: 100%;    
+    display: flex;
+    background-color: rgba(0,0,0,0.6);
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr;
+    color: azure;
+}
+
+.tope a{
+    text-decoration: none;
+    color: antiquewhite;
+    margin: 0.5em;
+    padding: 1em;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+nav p:hover{
+    background:var(--colorHover);
+    padding: 4px 20px;
+    border-radius: 7px;
+    color: azure;
+}
+/*fin header*/
+
+
+button{
+    border-radius: var(--EsquinaBoton);
+    margin: 0 0.5rem 0 0.5rem;
+    background-color: var(--colorBotones);
+    width: auto;
+    height: 40px;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-color: var(--colorBotones);
+}
+button:hover{
+    background-color: var(--colorHover);
+    border-color: var(--colorHover);
+}
+
+input{
+    border-radius: var(--EsquinaBoton);
+}
+
+pre{
+    width: 90%;
+}
+
+code{
+    padding: 2rem;
+}
+
+#tope{
+    margin-bottom: var(--Espaciado);
+    width: 100%;
+}
+
+#caja{
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 20rem;
+    min-width: 50%;
+    max-width: 50%;
+    margin-bottom: var(--Espaciado);
+    margin-right: var(--Espaciado);
+}
+
+#cajaLateral{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 7rem;
+    background-color: var(--colorCodigo);
+    border-radius: var(--Esquinas);
+}
+
+.burbuja{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 100%;
+    border: var(--MargenBurbuja) solid black;
+    min-width: var(--radioBurbuja);
+    min-height: var(--radioBurbuja);
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: 0.1rem auto 0 auto;
+    background-color: var(--colorCodigo);
+    padding: 0.5rem;
+    animation-name: arriba;
+    animation-duration: 1s;
+}
+
+
+.flecha{
+    width: 2rem;
+    height: 2rem;
+    background-image: url("https://i.pinimg.com/originals/51/3b/07/513b07e42724956e6410c48bb05d4b0f.png");
+    background-size: contain;
+    margin: 0rem auto 0 auto;
+    animation-name: arriba;
+    animation-duration: 1s;
+}
+
+
+@keyframes arriba {
+    0%{transform: translateY(100%); opacity: 0;}
+    100%{transform: translateY(0%); opacity: 1;}
+}
+
+#titulo{
+    width: 100%;
+}
+
+#contenedorCodigo{
+    width: 100%;
+    min-height: 20%;
+    max-height: fit-content;
+    margin: 15px;
+}
+
+#controles{
+    display: flex;
+}
+
+#codigoCompleto{
+    background-color: #8675A9;
+    border-radius: 1rem;
+    margin:auto;
+    margin-top: 2rem;
+    width: fit-content;
+    padding: 1rem;
+}
+
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Animations</title>
+    <link rel="stylesheet" href="styleStack.css">
+    <script src="Stack.js" defer></script>
+    <script src="appStack.js" defer></script>
+    
+    
+</head>
+<body>
+    <header class="tope">
+        <div>
+            <h1 class="titulo" id="titulo1">JavaScript Structures</h1>
+            <h3 class="titulo" id="titulo2">Stack</h3>
+        </div>
+        <nav> 
+            <p><a href = "../Index/galeria.html">Inicio</a></p>
+            <p><a href = "../List-copia/mainL.html">List</a></p>
+            <p><a href = "../Queue/mainQ.html">Queue</a></p>
+        </nav>
+        
+    </header>
+    
+
+    <div id="caja">
+        
+        
+    </div>
+
+    <div id="cajaLateral">
+        
+        <div id="contenedorCodigo">
+            <pre><code id="code">   
+int main(){
+    struct Stack* stack = createStack(100);
+<pre id="codigoA">
+
+</pre>
+
+return 0;
+}
+        </code></pre></div>
+
+        <div id="controles">
+            <button type="button" id="push">PUSH</button>
+            <button type="button" id ="pop">POP</button>
+            <input type="text" name="valor" id="input">
+            <button type="button" id ="guardar">Guardar</button>
+            <button type="button" id ="cargar">Cargar Pila</button>
+        </div>
+
+    </div>
+
+    <div id="codigoCompleto">
+        <pre><code id="code">   
+// C program for array implementation of stack
+#include &lt;limits.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;             
+
+// A structure to represent a stack
+struct Stack {
+    int top;
+    unsigned capacity;
+    int* array;
+};
+             
+// function to create a stack of given capacity. It initializes size of
+// stack as 0
+struct Stack* createStack(unsigned capacity){
+        
+    struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));            
+    stack->capacity = capacity;
+    stack->top = -1;
+    stack->array = (int*)malloc(stack->capacity * sizeof(int));
+    return stack;
+}
+             
+// Stack is full when top is equal to the last index
+int isFull(struct Stack* stack)
+{
+    return stack->top == stack->capacity - 1;
+}
+             
+// Stack is empty when top is equal to -1
+int isEmpty(struct Stack* stack){
+    return stack->top == -1;
+}
+             
+// Function to add an item to stack.  It increases top by 1
+void push(struct Stack* stack, int item){
+    if (isFull(stack))
+    return;
+    stack->array[++stack->top] = item;
+    printf("%d pushed to stack\n", item);
+}
+             
+// Function to remove an item from stack.  It decreases top by 1
+int pop(struct Stack* stack){
+    if (isEmpty(stack))
+        return INT_MIN;
+    return stack->array[stack->top--];
+}
+             
+// Function to return the top from stack without removing it
+int peek(struct Stack* stack){
+    if (isEmpty(stack))
+        return INT_MIN;
+    return stack->array[stack->top];
+}
+             
+// Driver program to test above functions
+int main(){
+    struct Stack* stack = createStack(100);
+<pre id="codigoACompleto"></pre>
+    
+return 0;
+}
+        </code></pre>
+    </div>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
+:root {
+    --Esquinas: 1rem;
+    --AnchoMargen: 0.15rem;
+    --Espaciado: 1rem;
+    --EsquinaBoton: 0.3rem;
+    --MargenArriba: 20px;
+    --Fuente: 'Mate SC', serif;
+    --radioBurbuja: 3rem;
+    --MargenBurbuja: 0.15rem;
+    --colorFondo: rgb(22, 155, 126);
+    --colorBurbuja: #08a1d0;
+    --colorCodigo: #dafffa;
+}
+
+*{
+    margin: 0;
+    
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("verde.jpg");
+    background-size: 100%;
+    font-family: var(--Fuente);
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+/* header */
+header{
+    margin: 0;
+    padding: 2rem;
+}
+.tope{
+    width: 100%;    
+    display: flex;
+    background-color: rgba(0,0,0,0.6);
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr;
+    color: azure;
+}
+.tope a{
+    text-decoration: none;
+    color: antiquewhite;
+    margin: 0.5em;
+    padding: 1em;
+}
+.logo-nav-container{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+nav p:hover{
+    background:var(--colorFondo);
+    padding: 4px 20px;
+    border-radius: 7px;
+    color: azure;
+}
+/*header*/
+
+
+h5{
+   font-family: 'Quicksand', sans-serif;
+   font-size: medium;
+   display: flex;
+    justify-content: center;
+    color: var(--colorFondo);
+}
+
+button{
+    border-radius: var(--EsquinaBoton);
+    margin: 0 0.5rem 0 0.5rem;
+    background-color: var(--colorFondo);
+    width:  4rem;
+    height: 40px;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-color: var(--colorFondo);
+
+}
+button:hover{
+    background-color: var(--colorBurbuja);
+    border-color: var(--colorBurbuja);
+}
+
+input{
+    border-radius: var(--EsquinaBoton);
+    width: 5rem;
+}
+
+pre{
+    width: fit-content;
+    height: fit-content;
+}
+
+code{
+    padding: 2rem;
+}
+
+
+
+#caja{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3rem;
+    margin-right: var(--Espaciado);
+    margin-top: 3rem;
+}
+
+#cajaLateral{
+    margin: auto;
+    min-width: 50%;
+    max-width: fit-content;
+    height: fit-content;
+    background-color: var(--colorCodigo);
+    border-radius: var(--Esquinas);
+    padding: 0.1rem;
+}
+
+.burbuja{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 100%;
+    border: var(--MargenBurbuja) solid black;
+    min-width: var(--radioBurbuja);
+    min-height: var(--radioBurbuja);
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 0.1rem;
+    margin-top: 0.2rem;
+    background-color: var(--colorBurbuja);
+    padding: 0.5rem;
+    animation-name: izquierda;
+    animation-duration: 1s;
+}
+
+
+.flecha{
+    width: 2rem;
+    height: 2rem;
+    background-image: url("https://i.pinimg.com/originals/58/1d/34/581d34b9daddc9f6eec84accc93c7a0c.png");
+    background-size: contain;
+    animation-name: izquierda;
+    animation-duration: 1s;
+}
+
+
+@keyframes izquierda {
+    0%{transform: translateX(100%); opacity: 0;}
+    100%{transform: translatex(0%); opacity: 1;}
+}
+
+#titulo{
+    width: 100%;
+}
+
+#contenedorCodigo{
+    width: 100%;
+    max-height: fit-content;
+}
+
+#controles{
+    padding: 20px;
+    margin-top: var(--MargenArriba);
+    display: flex;
+   
+    flex-wrap: wrap;
+    flex-flow: column;
+    width: 100%;
+    background-color:var(--colorCodigo);
+    border-radius: var(--Esquinas);
+}
+
+#controlesAgregar{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 1rem ;
+    margin-top: var(--MargenArriba);
+    
+}
+
+#controlesEliminar{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-top: var(--MargenArriba);
+}
+
+#controlesArriba{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#controlesAbajo{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+#code{
+    width: fit-content;
+}
+
+#controlesCarga{
+    margin-top: 0.5rem;
+    
+}
+#cargar{
+    width: auto;
+}
+
+

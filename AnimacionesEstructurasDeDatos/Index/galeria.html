@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estilo 3D galeria</title>
+        <link rel="stylesheet" href="styles-galeria.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <h1>Index</h1>
+            <div class="cols">
+              
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                    <div class="front" style="background-image: url(../Stack/morado.jpg)">
+                      <div class="inner">
+                        <p>Stack</p>
+                        <span>Pila</span>
+                      </div>
+                    </div>
+                    <div class="back">
+                     
+                      <div class="inner">
+                        <p>Es de tipo LIFO </p>
+                        <p>Para el manejo de los datos se cuenta con dos operaciones básicas: apilar (push), que coloca un objeto en la pila,
+                           y su operación inversa, retirar (o desapilar, pop), que retira el último elemento apilado.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                    <div class="front" style="background-image: url(../Queue/gris.jpg)">
+                      <div class="inner">
+                        <p>Queue</p>
+                        <span>Cola</span>
+                      </div>
+                    </div>
+                    <div class="back">
+                      <div class="inner">
+                        <p> Estructura FIFO (del inglés First In First Out)</p>
+                        <p> Es una secuencia de elementos en la que la operación de inserción PUSH se realiza por un extremo
+                           y la operación de extracción POP por el otro.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                    <div class="front" style="background-image: url(../List/verde.jpg)">
+                      <div class="inner">
+                        <p>List</p>
+                        <span>Lista Enlazada</span>
+                      </div>
+                    </div>
+                    <div class="back">
+                      <div class="inner">
+                        <p>Se representa internamente como Nodos.</p>
+                        <p>Agregar un elemento es fácil, o poco costoso en términos de alocación de memoria. 
+                          Símplemente debemos alocar espacio para un nuevo nodo, y actualizar el ultimo nodo, para que apunte al nuevo, como "siguiente".</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+               
+           </div>
+            <div id="botones">
+              <a class="boton" id="b1" href="../Stack/mainStack.html" >Go to Stack</a>
+              <a class="boton" id="b2" href="../Queue/mainQ.html" >Go to Queue</a>
+              <a class="boton" id="b3" href="../List-copia/mainL.html" >Go to List</a>
+            </div>
+       
+        
+    </body>
+
+
+</html>

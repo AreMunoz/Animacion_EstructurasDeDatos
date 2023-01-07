@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
+:root {
+    --Esquinas: 1rem;
+    --AnchoMargen: 0.15rem;
+    --Espaciado: 1rem;
+    --EsquinaBoton: 0.3rem;
+    --Fuente: 'Mate SC', serif;
+    --radioBurbuja: 3rem;
+    --MargenBurbuja: 0.15rem;
+    --colorFondo: #DEEDF0;
+    --colorBurbuja: pink;
+    --colorCodigo: pink;
+    --colorBotones: #7c7c7a;
+    --colorHover: #d06a66;
+}
+
+*{
+    margin: 0;
+    /* padding: 0.3rem; */
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("gris.jpg");
+    background-size: 100%;
+    font-family: var(--Fuente);
+}
+
+/*header*/
+
+header{
+    margin: 0;
+    padding: 2rem;
+}
+
+.tope{
+    width: 100%;    
+    display: flex;
+    background-color: rgba(0,0,0,0.6);
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr;
+    color: azure;
+}
+
+.tope a{
+    text-decoration: none;
+    color: antiquewhite;
+    margin: 0.5em;
+    padding: 1em;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+nav p:hover{
+    background:var( --colorHover);
+    padding: 4px 20px;
+    border-radius: 7px;
+    color: azure;
+}
+/*header fin*/
+
+
+
+button{
+    border-radius: var(--EsquinaBoton);
+    margin: 0 0.5rem 0 0.5rem;
+    background-color: var(--colorBotones);
+    width: auto;
+    height: 40px;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-color: var(--colorBotones);
+
+}
+
+button:hover{
+    background-color: var(--colorHover);
+    border-color: var(--colorHover);
+}
+
+input{
+    border-radius: var(--EsquinaBoton);
+}
+
+pre{
+    width: 100%;
+    height: fit-content;
+}
+
+code{
+    padding: 2rem;
+}
+
+#tope{
+    margin-bottom: var(--Espaciado);
+    width: 100%;
+}
+
+#caja{
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-right: var(--Espaciado);
+}
+
+#cajaLateral{
+    padding: 1rem;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--colorCodigo);
+    border-radius: var(--Esquinas);
+}
+
+.burbuja{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 100%;
+    border: var(--MargenBurbuja) solid black;
+    min-width: var(--radioBurbuja);
+    min-height: var(--radioBurbuja);
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 0.1rem;
+    background-color: var(--colorBurbuja);
+    padding: 0.5rem;
+    animation-name: izquierda;
+    animation-duration: 1s;
+}
+
+
+.flecha{
+    width: 2rem;
+    height: 2rem;
+    background-image: url("https://i.pinimg.com/originals/58/1d/34/581d34b9daddc9f6eec84accc93c7a0c.png");
+    background-size: contain;
+    animation-name: izquierda;
+    animation-duration: 1s;
+}
+
+
+@keyframes izquierda {
+    0%{transform: translateX(100%); opacity: 0;}
+    100%{transform: translatex(0%); opacity: 1;}
+}
+
+#titulo{
+    width: 100%;
+}
+
+#contenedorCodigo{
+    width: 100%;
+    max-height: fit-content;
+}
+
+#controles{
+    display: flex;
+}
+
+#ContenedorCodigoCompleto{
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    background-color: #d06a66;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: fit-content;
+}
+
+
+

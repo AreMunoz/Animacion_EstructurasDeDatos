@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Animations</title>
+    <link rel="stylesheet" href="styleQ.css">
+    <script src="Queue.js" defer></script>
+    <script src="appQ.js" defer></script>
+    
+    
+</head>
+<body>
+    <header class="tope">
+        <div>
+            <h1 class="titulo" id="titulo1">JavaScript Structures</h1>
+            <h3 class="titulo" id="titulo2">Queue</h3>
+        </div>
+        <nav> 
+            <p><a href = "../Index/galeria.html">Inicio</a></p>
+            <p><a href = "../List-copia/mainL.html">List</a></p>
+            <p><a href = "../Stack/mainStack.html">Stack</a></p>
+      </nav>
+    </header>
+    
+
+    <div id="caja">
+        
+        
+    </div>
+
+    <div id="cajaLateral">
+        
+        <div id="contenedorCodigo">
+            <pre><code id="code">   
+int main(){
+    struct Queue* queue = createQueue(1000);
+<pre id="codigoAñadido"></pre>
+          
+    return 0;
+}
+        </code></pre>
+        </div>
+
+        <div id="controles">
+            <button type="button" id="enqueue">ENQUEUE</button>
+            <button type="button" id ="dequeue">DEQUEUE</button>
+            <input type="text" name="valor" id="input">
+            <button type="button" id ="guardar">Guardar</button>
+            <button type="button" id ="cargar">Cargar Cola</button>
+        </div>
+
+    </div>
+
+    <div id="ContenedorCodigoCompleto">
+        <pre><code id="code">   
+// C program for array implementation of queue
+#include &lt;limits.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// A structure to represent a queue
+struct Queue {
+    int front, rear, size;
+    unsigned capacity;
+    int* array;
+};
+
+// function to create a queue
+// of given capacity.
+// It initializes size of queue as 0
+struct Queue* createQueue(unsigned capacity)
+{
+    struct Queue* queue = (struct Queue*)malloc(
+        sizeof(struct Queue));
+    queue->capacity = capacity;
+    queue->front = queue->size = 0;
+
+    // This is important, see the enqueue
+    queue->rear = capacity - 1;
+    queue->array = (int*)malloc(
+        queue->capacity * sizeof(int));
+    return queue;
+}
+
+// Queue is full when size becomes
+// equal to the capacity
+int isFull(struct Queue* queue)
+{
+    return (queue->size == queue->capacity);
+}
+
+// Queue is empty when size is 0
+int isEmpty(struct Queue* queue)
+{
+    return (queue->size == 0);
+}
+
+// Function to add an item to the queue.
+// It changes rear and size
+void enqueue(struct Queue* queue, int item)
+{
+    if (isFull(queue))
+        return;
+    queue->rear = (queue->rear + 1)
+                % queue->capacity;
+    queue->array[queue->rear] = item;
+    queue->size = queue->size + 1;
+    printf("%d enqueued to queue\n", item);
+}
+
+// Function to remove an item from queue.
+// It changes front and size
+int dequeue(struct Queue* queue)
+{
+    if (isEmpty(queue))
+        return INT_MIN;
+    int item = queue->array[queue->front];
+    queue->front = (queue->front + 1)
+                % queue->capacity;
+    queue->size = queue->size - 1;
+    return item;
+}
+
+// Function to get front of queue
+int front(struct Queue* queue){
+    if (isEmpty(queue))
+        return INT_MIN;
+    return queue->array[queue->front];
+}
+
+// Function to get rear of queue
+int rear(struct Queue* queue){
+    if (isEmpty(queue))
+        return INT_MIN;
+    return queue->array[queue->rear];
+}
+
+// Driver program to test above functions./
+int main(){
+    struct Queue* queue = createQueue(1000);
+<pre id="codigoACompleto"></pre>
+                
+    return 0;
+}
+        </code></pre>
+
+    </div>
+    
+    
+    
+</body>
+</html>
